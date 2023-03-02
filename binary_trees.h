@@ -27,6 +27,17 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
+/* 101-binary_tree_levelorder.c */
+/**
+ * struct queue_s - Level order traversal queue.
+ * @node: A node of a binary tree.
+ * @next: The next node to traverse to in the binary tree.
+ */
+typedef struct queue_s {
+    binary_tree_t  *node;
+    struct queue_s *next;
+} queue_t;
+
 /* Printing helper function */
 void binary_tree_print(const binary_tree_t *);
 
@@ -51,6 +62,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 
 #endif /* _BINARY_TREES_H_ */
