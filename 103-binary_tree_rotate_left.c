@@ -14,13 +14,13 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 	{
 		temp = pivot_r->left;
 		pivot_r->left = tree;
-		pivot_r->parent = tree->parent;
-		tree->parent = pivot_r;
 		tree->right = temp;
 		if (temp != NULL)
 			temp->parent = tree;
 
-		temp = pivot_r->parent;
+		temp = tree->parent;
+		tree->parent = pivot_r;
+		pivot_r->parent = temp;
 		if (temp != NULL)
 		{
 			if (temp->left == tree)
