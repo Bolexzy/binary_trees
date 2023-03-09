@@ -15,9 +15,8 @@ bst_t *array_to_bst(int *array, size_t size)
 	if (array == NULL)
 		return (NULL);
 
-	root = binary_tree_node(NULL, array[0]);
 
-	for (i = 1; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (bst_insert(&root, array[i]) == NULL)
 			return (NULL);
